@@ -177,9 +177,9 @@ function ProjectCard({ project }: { project: Project }) {
 export function ProjectsSection() {
   return (
     <section id="proyectos" className="relative py-24 md:py-32">
-      <StarField count={30} opacity={0.15} />
+      <StarField count={55} opacity={0.15} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-8">
         {/* Section Header */}
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-3">

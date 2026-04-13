@@ -60,7 +60,7 @@ function StarField() {
   const [stars, setStars] = useState<Array<{ id: number; x: number; y: number; size: number; delay: number }>>([])
 
   useEffect(() => {
-    const newStars = Array.from({ length: 60 }, (_, i) => ({
+    const newStars = Array.from({ length: 95 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -110,7 +110,7 @@ export function HeroSection() {
       <StarField />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-20 py-32">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 py-32">
         <div className="flex justify-between items-start">
           {/* Left Content */}
           <div className="max-w-2xl">

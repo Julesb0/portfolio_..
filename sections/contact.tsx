@@ -25,9 +25,9 @@ export function ContactSection() {
 
   return (
     <section id="contacto" className="relative py-24 md:py-32">
-      <StarField count={40} opacity={0.2} />
+      <StarField count={65} opacity={0.2} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-8">
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">

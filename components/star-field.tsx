@@ -15,7 +15,7 @@ type Star = {
   duration: number
 }
 
-export function StarField({ count = 24, opacity = 0.2 }: StarFieldProps) {
+export function StarField({ count = 40, opacity = 0.2 }: StarFieldProps) {
   const stars = useMemo<Star[]>(() => {
     return Array.from({ length: count }, () => ({
       left: Math.random() * 100,

@@ -6,9 +6,9 @@ import { StarField } from "../components/star-field"
 export function AboutSection() {
   return (
     <section id="sobre-mi" className="relative py-24 md:py-32">
-      <StarField count={30} opacity={0.18} />
+      <StarField count={50} opacity={0.18} />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
+      <div className="relative max-w-7xl mx-auto px-8">
 
         {/* Top divider + label */}
         <div className="mb-10">

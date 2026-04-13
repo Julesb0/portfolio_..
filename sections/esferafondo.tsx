@@ -15,7 +15,7 @@ interface StarFieldProps {
   opacity?: number
 }
 
-export function StarField({ count = 30, opacity = 0.2 }: StarFieldProps) {
+export function StarField({ count = 50, opacity = 0.2 }: StarFieldProps) {
   const [stars, setStars] = useState<Star[]>([])
 
   useEffect(() => {

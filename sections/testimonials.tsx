@@ -48,9 +48,9 @@ export function TestimonialsSection() {
 
   return (
     <section id="testimonios" className="relative py-24 md:py-32">
-      <StarField count={30} opacity={0.2} />
+      <StarField count={55} opacity={0.2} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-8">
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
