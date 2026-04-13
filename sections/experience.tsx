@@ -35,7 +35,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experiencia" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="experiencia" className="relative py-20 md:py-24 overflow-hidden">
       {/* Matrix-style background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none overflow-hidden">
         <div className="absolute inset-0 font-mono text-[#7c3aed] text-xs leading-4 whitespace-pre select-none">

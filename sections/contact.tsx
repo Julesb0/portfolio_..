@@ -24,7 +24,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="relative py-24 md:py-32">
+    <section id="contacto" className="relative py-20 md:py-24">
       <StarField count={65} opacity={0.2} />
 
       <div className="relative max-w-7xl mx-auto px-8">
@@ -34,7 +34,7 @@ export function ContactSection() {
             <Mail className="w-5 h-5 text-[#7c3aed]" />
             <span className="text-sm text-[#f1f5f9]">Contáctame</span>
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
             <span className="text-[#f1f5f9]">¿Tienes una idea en mente? </span>
             <span className="text-[#7c3aed]">Transformémosla</span>
             <span className="text-[#f1f5f9]"> en una </span>
@@ -92,7 +92,7 @@ export function ContactSection() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full py-6 gap-2 text-base disabled:opacity-50 cursor-pointer"
+                className="w-full bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-md py-6 gap-2 text-base disabled:opacity-50 cursor-pointer"
               >
                 {isSubmitting ? "Enviando..." : "Enviar mensaje"}
                 <Send className="w-4 h-4" />
@@ -125,7 +125,7 @@ export function ContactSection() {
               <div className="flex justify-center gap-4">
                 <a
                   href="mailto:jul.b.benavides@gmail.com"
-                  className="px-6 py-2 rounded-full bg-[#7c3aed] text-white flex items-center gap-2 hover:bg-[#6d28d9] transition-colors cursor-pointer"
+                  className="px-6 py-2 rounded-md bg-[#7c3aed] text-white flex items-center gap-2 hover:bg-[#6d28d9] transition-colors cursor-pointer"
                 >
                   <Mail className="w-4 h-4" />
                   Email
@@ -134,7 +134,7 @@ export function ContactSection() {
                   href="https://linkedin.com/in/esteban-bolaños-641668387"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2 rounded-full bg-[#0077b5] text-white flex items-center gap-2 hover:bg-[#006097] transition-colors cursor-pointer"
+                  className="px-6 py-2 rounded-md bg-[#0077b5] text-white flex items-center gap-2 hover:bg-[#006097] transition-colors cursor-pointer"
                 >
                   <Linkedin className="w-4 h-4" />
                   LinkedIn

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { FolderOpen, Search } from "lucide-react"
 import { StarField } from "@/sections/esferafondo"
 
@@ -18,6 +19,9 @@ interface Project {
   bannerLabel: string
   bannerLabelColor: string
   previewBg: string
+  images?: {
+    cover?: string
+  }
   techs: TechIcon[]
   demoUrl: string
 }
@@ -76,20 +80,23 @@ const projects: Project[] = [
   },
   {
     id: "04",
-    title: "Aneimera Platform",
+    title: "Mentes Creativas",
     description:
-      "Desarrollada para la directiva de ANEIMERA UPC, esta plataforma permite crear, editar y gestionar eventos de forma sencilla y segura, asegurando que cada actualización se refleje automáticamente en el sitio oficial de la organización.",
-    bannerBg: "linear-gradient(135deg, #991b1b 0%, #ef4444 50%, #fca5a5 100%)",
-    bannerLabel: "Aneimera Platform",
-    bannerLabelColor: "#fff",
-    previewBg: "#fee2e2",
+      "Plataforma educativa interactiva orientada al aprendizaje de matemáticas, ciencias naturales y tecnología mediante experiencias 3D inmersivas. Incluye módulos como sistema solar, formas 3D y simetría para aprendizaje lúdico.",
+    bannerBg: "linear-gradient(135deg, #0ea5e9 0%, #22d3ee 50%, #8b5cf6 100%)",
+    bannerLabel: "Mentes Creativas",
+    bannerLabelColor: "#082f49",
+    previewBg: "#dbeafe",
+    images: {
+      cover: "/MentesCreativas.png",
+    },
     techs: [
       { name: "React", bg: "#61dafb", letter: "R", color: "#000" },
-      { name: "Tailwind", bg: "#38bdf8", letter: "T", color: "#fff" },
-      { name: "C#", bg: "#68217a", letter: "C#", color: "#fff" },
-      { name: ".NET", bg: "#512bd4", letter: ".", color: "#fff" },
+      { name: "TypeScript", bg: "#3178c6", letter: "TS", color: "#fff" },
+      { name: "Three.js", bg: "#111827", letter: "3D", color: "#fff" },
+      { name: "Vite", bg: "#7c3aed", letter: "V", color: "#fff" },
     ],
-    demoUrl: "#",
+    demoUrl: "https://mentes-creativas4.vercel.app",
   },
 ]
 
@@ -102,7 +109,7 @@ function ProjectCard({ project }: { project: Project }) {
         style={{ background: project.bannerBg }}
       >
         {/* Project label inside banner */}
-        <div className="flex items-center gap-2 mb-3">
+        <div className="relative z-10 flex items-center gap-2 mb-3">
           <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
             <FolderOpen className="w-3.5 h-3.5 text-white" />
           </div>
@@ -116,24 +123,38 @@ function ProjectCard({ project }: { project: Project }) {
 
         {/* Mock UI preview */}
         <div
-          className="absolute inset-x-4 bottom-0 top-14 rounded-t-lg overflow-hidden shadow-xl"
+          className="absolute z-10 inset-x-4 bottom-0 top-14 rounded-t-lg overflow-hidden shadow-xl"
           style={{ background: project.previewBg }}
         >
-          <div className="flex flex-col gap-1 p-3 h-full">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-2 h-2 rounded-full bg-red-400" />
-              <div className="w-2 h-2 rounded-full bg-yellow-400" />
-              <div className="w-2 h-2 rounded-full bg-green-400" />
+          {project.images?.cover ? (
+            <>
+              <Image
+                src={project.images.cover}
+                alt={`Portada de ${project.title}`}
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={project.title === "Mentes Creativas"}
+              />
+              <div className="absolute inset-0 bg-black/10" />
+            </>
+          ) : (
+            <div className="flex flex-col gap-1 p-3 h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-2 h-2 rounded-full bg-red-400" />
+                <div className="w-2 h-2 rounded-full bg-yellow-400" />
+                <div className="w-2 h-2 rounded-full bg-green-400" />
+              </div>
+              <div className="h-2 rounded bg-white/60 w-3/4" />
+              <div className="h-2 rounded bg-white/40 w-1/2 mt-1" />
+              <div className="flex gap-2 mt-3">
+                <div className="h-16 rounded bg-white/50 flex-1" />
+                <div className="h-16 rounded bg-white/30 flex-1" />
+              </div>
+              <div className="h-2 rounded bg-white/40 w-2/3 mt-2" />
+              <div className="h-2 rounded bg-white/30 w-1/2" />
             </div>
-            <div className="h-2 rounded bg-white/60 w-3/4" />
-            <div className="h-2 rounded bg-white/40 w-1/2 mt-1" />
-            <div className="flex gap-2 mt-3">
-              <div className="h-16 rounded bg-white/50 flex-1" />
-              <div className="h-16 rounded bg-white/30 flex-1" />
-            </div>
-            <div className="h-2 rounded bg-white/40 w-2/3 mt-2" />
-            <div className="h-2 rounded bg-white/30 w-1/2" />
-          </div>
+          )}
         </div>
       </div>
 
@@ -176,7 +197,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function ProjectsSection() {
   return (
-    <section id="proyectos" className="relative py-24 md:py-32">
+    <section id="proyectos" className="relative py-20 md:py-24">
       <StarField count={55} opacity={0.15} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-8">
@@ -189,7 +210,7 @@ export function ProjectsSection() {
             <FolderOpen className="w-5 h-5 text-[#64748b]" />
             <span className="text-sm text-[#f1f5f9]">Proyectos</span>
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#f1f5f9] max-w-3xl">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight text-[#f1f5f9] max-w-3xl">
             Algunos de mis{" "}
             <span className="text-[#38bdf8]">proyectos destacados</span>{" "}
             como desarrollador full-stack y diseñador UI/UX

@@ -110,7 +110,7 @@ export function HeroSection() {
       <StarField />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 py-32">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 py-24">
         <div className="flex justify-between items-start">
           {/* Left Content */}
           <div className="max-w-2xl">
@@ -126,9 +126,11 @@ export function HeroSection() {
             </div>
 
             {/* Name */}
-            <h1 className="text-3xl md:text-4xl font-bold text-[#f1f5f9] mb-3 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-light text-[#f1f5f9] mb-3 leading-tight">
               Hola, soy{" "}
-              <span className="text-[#7c3aed]">Julio Bolaños</span>
+              <span className="font-bold bg-gradient-to-r from-[#c4b5fd] via-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">
+                Julio Bolaños
+              </span>
             </h1>
 
             {/* Typewriter */}

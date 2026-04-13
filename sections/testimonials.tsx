@@ -47,7 +47,7 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonios" className="relative py-24 md:py-32">
+    <section id="testimonios" className="relative py-20 md:py-24">
       <StarField count={55} opacity={0.2} />
 
       <div className="relative max-w-7xl mx-auto px-8">
@@ -57,7 +57,7 @@ export function TestimonialsSection() {
             <MessageSquare className="w-5 h-5 text-[#7c3aed]" />
             <span className="text-sm text-[#f1f5f9]">Testimonios</span>
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
             <span className="text-[#f1f5f9]">Lo que dicen sobre </span>
             <span className="text-[#7c3aed]">mi trabajo</span>
           </h2>

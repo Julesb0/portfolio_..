@@ -62,7 +62,7 @@ const skillCategories: SkillCategory[] = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-24 md:py-32">
+    <section id="skills" className="relative py-20 md:py-24">
       <StarField count={65} opacity={0.2} />
 
       <div className="relative max-w-7xl mx-auto px-8">
@@ -72,7 +72,7 @@ export function SkillsSection() {
             <Code2 className="w-5 h-5 text-[#7c3aed]" />
             <span className="text-sm text-[#f1f5f9]">Habilidades técnicas</span>
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
             <span className="text-[#7c3aed]">Desarrollador de Software</span>
             <span className="text-[#f1f5f9]"> con experiencia en tecnologías </span>
             <span className="text-[#38bdf8]">Frontend</span>
@@ -96,7 +96,8 @@ export function SkillsSection() {
                     href={skill.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative p-4 rounded-xl bg-[#111827] border border-[#1e293b] hover:border-[#7c3aed] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#7c3aed]/20 cursor-pointer"
+                    className="group relative p-4 rounded-xl bg-transparent border border-[#1e293b] hover:bg-[color-mix(in_srgb,var(--skill-color)_8%,transparent)] hover:border-[color-mix(in_srgb,var(--skill-color)_25%,#1e293b)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--skill-color)]/6 cursor-pointer"
+                    style={{ "--skill-color": skill.color } as React.CSSProperties}
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 flex-shrink-0">

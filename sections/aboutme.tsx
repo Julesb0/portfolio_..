@@ -5,7 +5,7 @@ import { StarField } from "../components/star-field"
 
 export function AboutSection() {
   return (
-    <section id="sobre-mi" className="relative py-24 md:py-32">
+    <section id="sobre-mi" className="relative py-20 md:py-24">
       <StarField count={50} opacity={0.18} />
 
       <div className="relative max-w-7xl mx-auto px-8">
@@ -22,7 +22,7 @@ export function AboutSection() {
         </div>
 
         {/* Main heading */}
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-12 text-balance">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-12 text-balance">
           <span className="text-[#f1f5f9]">Soy un </span>
           <span className="text-[#4ade80]">desarrollador de software</span>
           <br />
@@ -31,9 +31,9 @@ export function AboutSection() {
         </h2>
 
         {/* Bio row: text left, photo right */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-10 mb-10">
           {/* Left: name + role + bio */}
-          <div className="flex-1 max-w-xl">
+          <div className="flex-1 lg:max-w-4xl">
             <p className="text-[#f1f5f9] font-bold text-lg mb-1">Julio Esteban Bolaños Benavides</p>
             <p className="text-[#4ade80] text-sm font-medium mb-5">Desarrollador Frontend</p>
 
@@ -51,7 +51,7 @@ export function AboutSection() {
           </div>
 
           {/* Right: photo */}
-          <div className="flex-shrink-0 flex justify-center lg:justify-end">
+          <div className="flex-shrink-0 flex justify-center lg:justify-end lg:ml-auto">
             <div className="w-56 h-64 rounded-2xl overflow-hidden border border-[#1e293b] bg-[#111827] flex items-center justify-center">
               <div className="flex flex-col items-center gap-3">
                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#4ade80] flex items-center justify-center">
@@ -63,50 +63,48 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Bottom info grid: 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-[#1e293b]">
+        {/* Bottom info grid: left details + education */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
 
-          {/* Column 1: Idiomas + Habilidades Blandas */}
-          <div className="border-b md:border-b-0 md:border-r border-[#1e293b] pr-0 md:pr-8 py-8">
-            {/* Idiomas */}
-            <div className="mb-8">
-              <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Idiomas</p>
-              <div className="w-full h-px bg-[#1e293b] mb-4" />
-              <p className="text-[#f1f5f9] text-sm">
-                <strong>Español</strong> - Nativo &nbsp;&nbsp;
-                <strong>Inglés</strong> - B1
-              </p>
-            </div>
+          {/* Left block: aligned rows between columns */}
+          <div className="md:col-span-2 py-6 md:py-8 md:pr-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8">
 
-            {/* Habilidades Blandas */}
-            <div>
-              <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Habilidades Blandas</p>
-              <div className="w-full h-px bg-[#1e293b] mb-4" />
-              <p className="text-[#f1f5f9] text-sm">Creativo - Proactivo - Autodidacta</p>
-            </div>
-          </div>
+              {/* Row 1 */}
+              <div className="py-3 md:py-0">
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Idiomas</p>
+                <div className="w-full h-px bg-[#1e293b] mb-4" />
+                <p className="text-[#f1f5f9] text-sm">
+                  <strong>Español</strong> - Nativo &nbsp;&nbsp;
+                  <strong>Inglés</strong> - B1
+                </p>
+              </div>
 
-          {/* Column 2: Voluntariado + Intereses */}
-          <div className="border-b md:border-b-0 md:border-r border-[#1e293b] px-0 md:px-8 py-8">
-            {/* Voluntariado */}
-            <div className="mb-8">
-              <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Voluntariado</p>
-              <div className="w-full h-px bg-[#1e293b] mb-4" />
-              <p className="text-[#f1f5f9] text-sm">
-                Representante estudiantil - Consejo Estudiantil UCC
-              </p>
-            </div>
+              <div className="py-3 md:py-0">
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Voluntariado</p>
+                <div className="w-full h-px bg-[#1e293b] mb-4" />
+                <p className="text-[#f1f5f9] text-sm">
+                  Representante estudiantil - Consejo Estudiantil UCC
+                </p>
+              </div>
 
-            {/* Intereses */}
-            <div>
-              <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Intereses</p>
-              <div className="w-full h-px bg-[#1e293b] mb-4" />
-              <p className="text-[#f1f5f9] text-sm">Programación - Diseño UX/UI - Música - Fútbol</p>
+              {/* Row 2 */}
+              <div className="py-3 md:py-0">
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Habilidades Blandas</p>
+                <div className="w-full h-px bg-[#1e293b] mb-4" />
+                <p className="text-[#f1f5f9] text-sm">Creativo - Proactivo - Autodidacta</p>
+              </div>
+
+              <div className="py-3 md:py-0">
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Intereses</p>
+                <div className="w-full h-px bg-[#1e293b] mb-4" />
+                <p className="text-[#f1f5f9] text-sm">Programación - Diseño UX/UI - Música - Fútbol</p>
+              </div>
             </div>
           </div>
 
-          {/* Column 3: Educación */}
-          <div className="pl-0 md:pl-8 py-8">
+          {/* Right block: educación */}
+          <div className="pl-0 md:pl-8 py-6 md:py-8">
             <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Educación</p>
             <div className="w-full h-px bg-[#1e293b] mb-6" />
 
