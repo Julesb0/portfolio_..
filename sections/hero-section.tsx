@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from "react"
 import { Download, Github, Linkedin, MessageCircle, ChevronDown, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const titles = ["Software Developer", "Frontend Developer", "UI/UX Designer"]
+const titles = ["Software Developer", "Full Stack Jr", "UI/UX Designer"]
 
 function TypewriterText() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
@@ -145,7 +145,7 @@ export function HeroSection() {
 
             {/* Bio */}
             <p className="text-[#94a3b8] text-sm md:text-base max-w-lg mb-8 leading-relaxed">
-              Estudiante de Ingenieria de Software en la Universidad Cooperativa de Colombia y desarrollador autodidacta con experiencia en Frontend y Diseno UX/UI.
+              Estudiante de Ingenieria de Software en la Universidad Cooperativa de Colombia y desarrollador autodidacta con experiencia en Backend y Diseno UX/UI.
             </p>
 
             {/* CTA Buttons */}

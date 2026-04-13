@@ -46,7 +46,7 @@ export function AboutSection() {
               </p>
               <p>
                 Durante mi formación, he enfocado mi aprendizaje en el diseño centrado en el usuario y el rendimiento óptimo para aplicaciones web y móviles. De manera autodidacta, he adquirido habilidades para desarrollar soluciones{" "}
-                <strong className="text-[#f1f5f9]">accesibles y escalables</strong>.
+                <strong className="text-[#f1f5f9]">accesibles y escalables</strong>. También me gusta tocar el piano y he participado en el carnaval en dos ocasiones: como redoblante y en coreografía.
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ export function AboutSection() {
               <div className="py-3 md:py-0">
                 <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Intereses</p>
                 <div className="w-full h-px bg-[#1e293b] mb-4" />
-                <p className="text-[#f1f5f9] text-sm">Programación - Diseño UX/UI - Música - Fútbol</p>
+                <p className="text-[#f1f5f9] text-sm">Programación - Diseño UX/UI - Piano - Fútbol</p>
               </div>
 
               {/* Row 2 */}
@@ -125,6 +125,7 @@ export function AboutSection() {
                   Universidad Cooperativa de Colombia
                 </a>
                 <p className="text-[#64748b] text-xs mt-1">Ingeniería de Software | 2022 - Presente</p>
+                <p className="text-[#64748b] text-xs mt-1">Inglés en Cambridge</p>
                 <div className="flex items-center gap-1.5 mt-2 text-[#64748b] text-xs">
                   <MapPin className="w-3 h-3 flex-shrink-0" />
                   <span>Pasto, Nariño - Colombia</span>
