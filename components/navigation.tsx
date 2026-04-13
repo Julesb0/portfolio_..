@@ -1,14 +1,13 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { Menu, X, Download, Home, FolderOpen, User, Briefcase, Code2, MessageSquare, Mail } from "lucide-react"
+import { Menu, X, Download, Home, FolderOpen, User, Code2, MessageSquare, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
   { id: "inicio", label: "Inicio", icon: Home },
   { id: "proyectos", label: "Proyectos", icon: FolderOpen },
   { id: "sobre-mi", label: "Sobre Mí", icon: User },
-  { id: "experiencia", label: "Experiencia", icon: Briefcase },
   { id: "skills", label: "Skills", icon: Code2 },
   { id: "testimonios", label: "Testimonios", icon: MessageSquare },
   { id: "contacto", label: "Contacto", icon: Mail },

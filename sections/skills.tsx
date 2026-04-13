@@ -70,7 +70,7 @@ export function SkillsSection() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <Code2 className="w-5 h-5 text-[#7c3aed]" />
-            <span className="font-mono text-sm text-[#64748b]">{"// 05 · HABILIDADES TÉCNICAS"}</span>
+            <span className="text-sm text-[#f1f5f9]">Habilidades técnicas</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
             <span className="text-[#7c3aed]">Desarrollador de Software</span>

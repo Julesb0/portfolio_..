@@ -1,44 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, Send, Github, Linkedin, MessageCircle } from "lucide-react"
+import { Mail, Send, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { StarField } from "@/sections/esferafondo"
-
-const contactLinks = [
-  {
-    label: "Email",
-    value: "jul.b.benavides@gmail.com",
-    icon: Mail,
-    href: "mailto:jul.b.benavides@gmail.com",
-    color: "#f97316",
-    hoverBg: "hover:bg-[#f97316]/10 hover:border-[#f97316]",
-  },
-  {
-    label: "LinkedIn",
-    value: "Julio Bolaños",
-    icon: Linkedin,
-    href: "https://linkedin.com/in/esteban-bolaños-641668387",
-    color: "#0077b5",
-    hoverBg: "hover:bg-[#0077b5]/10 hover:border-[#0077b5]",
-  },
-  {
-    label: "GitHub",
-    value: "Julesb0",
-    icon: Github,
-    href: "https://github.com/Julesb0",
-    color: "#ffffff",
-    hoverBg: "hover:bg-white/10 hover:border-white",
-  },
-  {
-    label: "Discord",
-    value: "Servidor de Comunidad",
-    icon: MessageCircle,
-    href: "#",
-    color: "#5865f2",
-    hoverBg: "hover:bg-[#5865f2]/10 hover:border-[#5865f2]",
-  },
-]
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -67,7 +32,7 @@ export function ContactSection() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <Mail className="w-5 h-5 text-[#7c3aed]" />
-            <span className="font-mono text-sm text-[#64748b]">{"// 07 · CONTÁCTAME"}</span>
+            <span className="text-sm text-[#f1f5f9]">Contáctame</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
             <span className="text-[#f1f5f9]">¿Tienes una idea en mente? </span>
@@ -137,7 +102,7 @@ export function ContactSection() {
 
           {/* Contact Card */}
           <div className="flex flex-col items-center justify-center">
-            <div className="w-full max-w-md p-8 rounded-2xl bg-[#111827] border border-[#1e293b]">
+            <div className="w-full max-w-md p-0 bg-transparent border-0">
               {/* Profile */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#38bdf8] flex items-center justify-center">
@@ -175,27 +140,6 @@ export function ContactSection() {
                   LinkedIn
                 </a>
               </div>
-            </div>
-
-            {/* Contact Links Grid */}
-            <div className="grid grid-cols-2 gap-4 mt-8 w-full max-w-md">
-              {contactLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className={`p-4 rounded-xl bg-[#111827] border border-[#1e293b] transition-all cursor-pointer ${link.hoverBg}`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[#f1f5f9] text-sm font-medium">{link.label}</span>
-                      <Icon className="w-5 h-5" style={{ color: link.color }} />
-                    </div>
-                  </a>
-                )
-              })}
             </div>
           </div>
         </div>
