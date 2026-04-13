@@ -32,14 +32,17 @@ export function ContactSection() {
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <Mail className="w-5 h-5 text-[#7c3aed]" />
+            <div className="relative w-10 h-10 flex items-center justify-center rounded-xl">
+              <span className="absolute inset-0 rounded-xl bg-[#a855f7]/20 blur-md" />
+              <Mail className="relative w-5 h-5 text-[#f3e8ff]" />
+            </div>
             <span className="text-sm text-[#f1f5f9]">Contáctame</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
             <span className="text-[#f1f5f9]">¿Tienes una idea en mente? </span>
-            <span className="text-[#7c3aed]">Transformémosla</span>
+            <span className="text-[#d8b4fe]">Transformémosla</span>
             <span className="text-[#f1f5f9]"> en una </span>
-            <span className="text-[#38bdf8]">experiencia</span>
+            <span className="text-[#d8b4fe]">experiencia</span>
             <span className="text-[#f1f5f9]"> visual única y funcional.</span>
           </h2>
         </div>

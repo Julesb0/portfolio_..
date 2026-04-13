@@ -2,8 +2,6 @@
 
 Proyecto de portafolio personal construido con Next.js (App Router), React y TypeScript.
 
-Actualizacion de historial de commits en GitHub.
-
 ## Scripts
 
 - `pnpm dev`: inicia el entorno de desarrollo.

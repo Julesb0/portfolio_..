@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Julio Bolaños | Software Developer',
+  title: 'Julesb0 | Software Developer',
   description: 'Portafolio profesional de Julio Bolaños Benavides - Desarrollador de Software especializado en aplicaciones web y móviles.',
   keywords: ['Software Developer', 'Frontend', 'React', 'Next.js', 'TypeScript', 'Portfolio'],
   authors: [{ name: 'Julio Bolaños Benavides' }],
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_CO',
-    title: 'Julio Bolaños | Software Developer',
+    title: 'Julesb0 | Software Developer',
     description: 'Desarrollador de Software especializado en crear soluciones tecnológicas eficientes.',
     siteName: 'Julio Bolaños Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Julio Bolaños | Software Developer',
+    title: 'Julesb0 | Software Developer',
     description: 'Desarrollador de Software especializado en crear soluciones tecnológicas eficientes.',
   },
 }

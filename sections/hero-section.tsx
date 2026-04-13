@@ -119,10 +119,15 @@ export function HeroSection() {
               <div className="w-14 h-14 rounded-full bg-[#1e293b] border-2 border-[#334155] flex items-center justify-center overflow-hidden flex-shrink-0">
                 <span className="text-lg font-bold text-[#7c3aed]">JB</span>
               </div>
-              <div className="flex items-center gap-2 border border-[#334155] rounded-full px-3 py-1 text-sm text-[#f1f5f9]">
-                <span className="w-2 h-2 bg-[#10b981] rounded-full animate-pulse" />
+              <a
+                href="https://linkedin.com/in/esteban-bolaños-641668387"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 border border-[#334155] rounded-full px-3 py-1 text-sm text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#c4b5fd] transition-colors cursor-pointer"
+              >
+                <span className="w-2 h-2 bg-[#7c3aed] rounded-full animate-pulse" />
                 Disponible para trabajar
-              </div>
+              </a>
             </div>
 
             {/* Name */}

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { FolderOpen, Search } from "lucide-react"
+import { FolderOpen, Search, Github } from "lucide-react"
 import { StarField } from "@/sections/esferafondo"
 
 interface TechIcon {
@@ -24,6 +24,7 @@ interface Project {
   }
   techs: TechIcon[]
   demoUrl: string
+  codeUrl: string
 }
 
 const projects: Project[] = [
@@ -43,23 +44,28 @@ const projects: Project[] = [
       { name: ".NET", bg: "#512bd4", letter: ".", color: "#fff" },
     ],
     demoUrl: "#",
+    codeUrl: "#",
   },
   {
     id: "02",
-    title: "Spotify Clone",
+    title: "Clon Inicial Mercado Libre",
     description:
-      "Basado en la plataforma de música más popular, este clon recrea la experiencia de usuario de Spotify, incorporando funcionalidades como reproducción en tiempo real, gestión de playlists y exploración de artistas con interfaz responsive.",
-    bannerBg: "linear-gradient(135deg, #1db954 0%, #a3e635 50%, #d9f99d 100%)",
-    bannerLabel: "Spotify Clone",
-    bannerLabelColor: "#14532d",
-    previewBg: "#ecfccb",
+      "Clon inicial de la interfaz de Mercado Libre enfocado en maquetación responsive y estructura de e-commerce. Incluye navegación principal, secciones de productos destacadas y base visual para futuras funcionalidades.",
+    bannerBg: "linear-gradient(135deg, #facc15 0%, #fde047 50%, #fef08a 100%)",
+    bannerLabel: "Clon Mercado Libre",
+    bannerLabelColor: "#1f2937",
+    previewBg: "#fef9c3",
+    images: {
+      cover: "/mercadolibre.png",
+    },
     techs: [
       { name: "Astro", bg: "#ff5d01", letter: "A", color: "#fff" },
       { name: "React", bg: "#61dafb", letter: "R", color: "#000" },
-      { name: "Svelte", bg: "#ff3e00", letter: "S", color: "#fff" },
+      { name: "CSS", bg: "#1572b6", letter: "C", color: "#fff" },
       { name: "TS", bg: "#3178c6", letter: "TS", color: "#fff" },
     ],
-    demoUrl: "#",
+    demoUrl: "https://clon-inicial-mercado-libre.vercel.app/",
+    codeUrl: "https://github.com/Julesb0/clon-inicial-MercadoLibre.git",
   },
   {
     id: "03",
@@ -77,6 +83,7 @@ const projects: Project[] = [
       { name: ".NET", bg: "#512bd4", letter: ".", color: "#fff" },
     ],
     demoUrl: "#",
+    codeUrl: "#",
   },
   {
     id: "04",
@@ -97,6 +104,7 @@ const projects: Project[] = [
       { name: "Vite", bg: "#7c3aed", letter: "V", color: "#fff" },
     ],
     demoUrl: "https://mentes-creativas4.vercel.app",
+    codeUrl: "https://github.com/Julesb0/MentesCreativas4.git",
   },
 ]
 
@@ -179,16 +187,28 @@ function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
 
-          {/* Explorar button */}
-          <a
-            href={project.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#334155] text-sm font-semibold text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all cursor-pointer"
-          >
-            Explorar
-            <Search className="w-3.5 h-3.5" />
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href={project.codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#334155] text-sm font-semibold text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all cursor-pointer"
+            >
+              Codigo
+              <Github className="w-3.5 h-3.5" />
+            </a>
+
+            {/* Explorar button */}
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#334155] text-sm font-semibold text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all cursor-pointer"
+            >
+              Explorar
+              <Search className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -203,16 +223,16 @@ export function ProjectsSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         {/* Section Header */}
         <div className="mb-14">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-0.5 bg-[#334155]" />
-          </div>
           <div className="flex items-center gap-2 mb-4">
-            <FolderOpen className="w-5 h-5 text-[#64748b]" />
+            <div className="relative w-10 h-10 flex items-center justify-center rounded-xl">
+              <span className="absolute inset-0 rounded-xl bg-[#60a5fa]/20 blur-md" />
+              <FolderOpen className="relative w-5 h-5 text-[#dbeafe]" />
+            </div>
             <span className="text-sm text-[#f1f5f9]">Proyectos</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight text-[#f1f5f9] max-w-3xl">
             Algunos de mis{" "}
-            <span className="text-[#38bdf8]">proyectos destacados</span>{" "}
+            <span className="text-[#93c5fd]">proyectos destacados</span>{" "}
             como desarrollador full-stack 
           </h2>
         </div>

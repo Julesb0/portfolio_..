@@ -69,15 +69,18 @@ export function SkillsSection() {
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <Code2 className="w-5 h-5 text-[#7c3aed]" />
+            <div className="relative w-10 h-10 flex items-center justify-center rounded-xl">
+              <span className="absolute inset-0 rounded-xl bg-[#60a5fa]/20 blur-md" />
+              <Code2 className="relative w-5 h-5 text-[#c7d2fe]" />
+            </div>
             <span className="text-sm text-[#f1f5f9]">Habilidades técnicas</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
-            <span className="text-[#7c3aed]">Desarrollador de Software</span>
+            <span className="text-[#93c5fd]">Desarrollador de Software</span>
             <span className="text-[#f1f5f9]"> con experiencia en tecnologías </span>
-            <span className="text-[#38bdf8]">Frontend</span>
+            <span className="text-[#93c5fd]">Frontend</span>
             <span className="text-[#f1f5f9]"> y </span>
-            <span className="text-[#38bdf8]">Backend</span>
+            <span className="text-[#93c5fd]">Backend</span>
           </h2>
         </div>
 

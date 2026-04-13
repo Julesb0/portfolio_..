@@ -53,7 +53,10 @@ export function ExperienceSection() {
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <Briefcase className="w-5 h-5 text-[#f97316]" />
+            <div className="relative w-10 h-10 flex items-center justify-center rounded-xl">
+              <span className="absolute inset-0 rounded-xl bg-[#fb923c]/20 blur-md" />
+              <Briefcase className="relative w-5 h-5 text-[#ffedd5]" />
+            </div>
             <span className="text-sm text-[#f1f5f9]">Experiencia laboral</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>

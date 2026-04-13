@@ -13,10 +13,10 @@ export function AboutSection() {
 
         {/* Top divider + label */}
         <div className="mb-10">
-          <div className="w-8 h-0.5 bg-[#334155] mb-6" />
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full border border-[#334155] flex items-center justify-center">
-              <User className="w-4 h-4 text-[#f1f5f9]" />
+            <div className="relative w-10 h-10 flex items-center justify-center rounded-xl">
+              <span className="absolute inset-0 rounded-xl bg-[#4ade80]/20 blur-md" />
+              <User className="relative w-5 h-5 text-[#dcfce7]" />
             </div>
             <span className="text-[#f1f5f9] text-base font-medium tracking-wide">Sobre Mí</span>
           </div>
