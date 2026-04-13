@@ -213,7 +213,7 @@ export function ProjectsSection() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight text-[#f1f5f9] max-w-3xl">
             Algunos de mis{" "}
             <span className="text-[#38bdf8]">proyectos destacados</span>{" "}
-            como desarrollador full-stack y diseñador UI/UX
+            como desarrollador full-stack 
           </h2>
         </div>
 

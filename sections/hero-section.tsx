@@ -129,7 +129,7 @@ export function HeroSection() {
             <h1 className="text-3xl md:text-4xl font-light text-[#f1f5f9] mb-3 leading-tight">
               Hola, soy{" "}
               <span className="font-bold bg-gradient-to-r from-[#c4b5fd] via-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">
-                Julio Bolaños
+                Julio B. Benavides
               </span>
             </h1>
 

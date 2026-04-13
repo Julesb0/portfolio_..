@@ -16,7 +16,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="text-center md:text-left">
             <p className="font-mono text-sm text-[#64748b]">
-              Julio Bolaños © {new Date().getFullYear()} — Diseñado & desarrollado con código y café.
+              Julesb0 © {new Date().getFullYear()} — Diseñado & desarrollado con código y café.
             </p>
           </div>
 
