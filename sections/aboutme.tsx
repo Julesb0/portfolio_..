@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { User, MapPin } from "lucide-react"
 import { StarField } from "../components/star-field"
 
@@ -37,7 +38,7 @@ export function AboutSection() {
             <p className="text-[#f1f5f9] font-bold text-lg mb-1">Julio Esteban Bolaños Benavides</p>
             <p className="text-[#4ade80] text-sm font-medium mb-5">Desarrollador Frontend</p>
 
-            <div className="space-y-4 text-[#94a3b8] text-sm leading-relaxed">
+            <div className="space-y-4 text-[#94a3b8] text-sm leading-relaxed lg:max-w-2xl">
               <p>
                 Soy estudiante de Ingeniería de Software y actualmente me encuentro en los semestres intermedios de mi carrera. A lo largo de mi formación, he cultivado una mentalidad proactiva y autodidacta, participando en{" "}
                 <strong className="text-[#f1f5f9]">proyectos académicos</strong> y{" "}
@@ -51,14 +52,16 @@ export function AboutSection() {
           </div>
 
           {/* Right: photo */}
-          <div className="flex-shrink-0 flex justify-center lg:justify-end lg:ml-auto">
-            <div className="w-56 h-64 rounded-2xl overflow-hidden border border-[#1e293b] bg-[#111827] flex items-center justify-center">
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#4ade80] flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">JB</span>
-                </div>
-                <span className="text-[#64748b] text-xs">Julio Bolaños</span>
-              </div>
+          <div className="flex-shrink-0 flex justify-center lg:justify-end lg:ml-auto lg:mr-6">
+            <div className="w-56 h-64 rounded-2xl overflow-hidden border border-[#1e293b] bg-[#111827]">
+              <Image
+                src="/FotoPortfolio.png"
+                alt="Foto de Julio Bolaños"
+                width={224}
+                height={256}
+                className="w-full h-full object-cover object-center"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -81,24 +84,16 @@ export function AboutSection() {
               </div>
 
               <div className="py-3 md:py-0">
-                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Voluntariado</p>
-                <div className="w-full h-px bg-[#1e293b] mb-4" />
-                <p className="text-[#f1f5f9] text-sm">
-                  Representante estudiantil - Consejo Estudiantil UCC
-                </p>
-              </div>
-
-              {/* Row 2 */}
-              <div className="py-3 md:py-0">
-                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Habilidades Blandas</p>
-                <div className="w-full h-px bg-[#1e293b] mb-4" />
-                <p className="text-[#f1f5f9] text-sm">Creativo - Proactivo - Autodidacta</p>
-              </div>
-
-              <div className="py-3 md:py-0">
                 <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Intereses</p>
                 <div className="w-full h-px bg-[#1e293b] mb-4" />
                 <p className="text-[#f1f5f9] text-sm">Programación - Diseño UX/UI - Música - Fútbol</p>
+              </div>
+
+              {/* Row 2 */}
+              <div className="py-3 md:py-0 md:col-span-2">
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Habilidades Blandas</p>
+                <div className="w-full h-px bg-[#1e293b] mb-4" />
+                <p className="text-[#f1f5f9] text-sm">Creativo - Proactivo - Autodidacta</p>
               </div>
             </div>
           </div>
@@ -109,9 +104,15 @@ export function AboutSection() {
             <div className="w-full h-px bg-[#1e293b] mb-6" />
 
             <div className="flex items-start gap-4">
-              {/* University logo placeholder */}
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1d4ed8] to-[#2563eb] flex-shrink-0 flex items-center justify-center border border-[#334155]">
-                <span className="text-white text-xs font-bold leading-none text-center">UCC</span>
+              {/* University logo */}
+              <div className="w-20 h-20 flex-shrink-0 flex items-center justify-center">
+                <Image
+                  src="/logo_ucc_2018(CURVAS)-01.png"
+                  alt="Logo Universidad Cooperativa de Colombia"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               <div>

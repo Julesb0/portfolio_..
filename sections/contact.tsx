@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { Mail, Send, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -104,13 +105,19 @@ export function ContactSection() {
           <div className="flex flex-col items-center justify-center">
             <div className="w-full max-w-md p-0 bg-transparent border-0">
               {/* Profile */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#38bdf8] flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">JB</span>
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-20 h-20 rounded-2xl overflow-hidden bg-[#cbd5e1] border border-[#94a3b8]/40 flex-shrink-0">
+                  <Image
+                    src="/7cef6379-3486-473a-8f85-43bc9cfd27e7.png"
+                    alt="Foto de Julio Bolaños"
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
-                <div>
+                <div className="text-left">
                   <h3 className="text-xl font-bold text-[#f1f5f9]">Julio Bolaños</h3>
-                  <p className="text-[#7c3aed] font-mono text-sm">Desarrollador Frontend</p>
+                  <p className="text-[#7c3aed] font-mono text-sm">Desarrollador de software</p>
                 </div>
               </div>
 
@@ -119,7 +126,11 @@ export function ContactSection() {
                 <span className="text-[#f1f5f9] font-medium">formulario</span> y cuéntame tu idea. ¡Estaré encantado de ayudarte!
               </p>
 
-              <div className="text-center text-[#64748b] text-sm mb-4">o contáctame por</div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px flex-1 bg-[#334155]" />
+                <div className="text-center text-[#64748b] text-sm whitespace-nowrap">o contáctame por</div>
+                <div className="h-px flex-1 bg-[#334155]" />
+              </div>
 
               {/* Quick contact buttons */}
               <div className="flex justify-center gap-4">

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useCallback } from "react"
-import { Download, Github, Linkedin, Youtube, ChevronDown, Mail } from "lucide-react"
+import { Download, Github, Linkedin, MessageCircle, ChevronDown, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const titles = ["Software Developer", "Frontend Developer", "UI/UX Designer"]
@@ -94,7 +94,7 @@ const socialLinks = [
   { href: "https://linkedin.com/in/esteban-bolaños-641668387", label: "LinkedIn", icon: Linkedin },
   { href: "https://github.com/Julesb0", label: "GitHub", icon: Github },
   { href: "mailto:julioestebanb0@gmail.com", label: "Email", icon: Mail },
-  { href: "#", label: "YouTube", icon: Youtube },
+  { href: "#", label: "Discord", icon: MessageCircle },
 ]
 
 export function HeroSection() {
