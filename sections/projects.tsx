@@ -30,24 +30,6 @@ interface Project {
 const projects: Project[] = [
   {
     id: "01",
-    title: "Aid Manager Web",
-    description:
-      "Diseñada para equipos enfocados en el impacto social, esta plataforma facilita la gestión de proyectos benéficos mediante herramientas para coordinar tareas, asignar recursos y obtener análisis en tiempo real que optimizan cada iniciativa.",
-    bannerBg: "linear-gradient(135deg, #16a34a 0%, #4ade80 50%, #bbf7d0 100%)",
-    bannerLabel: "Aid Manager Web",
-    bannerLabelColor: "#14532d",
-    previewBg: "#dcfce7",
-    techs: [
-      { name: "Vue.js", bg: "#42b883", letter: "V", color: "#fff" },
-      { name: "JavaScript", bg: "#f7df1e", letter: "JS", color: "#000" },
-      { name: "C#", bg: "#68217a", letter: "C#", color: "#fff" },
-      { name: ".NET", bg: "#512bd4", letter: ".", color: "#fff" },
-    ],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: "02",
     title: "Clon Inicial Mercado Libre",
     description:
       "Clon inicial de la interfaz de Mercado Libre enfocado en maquetación responsive y estructura de e-commerce. Incluye navegación principal, secciones de productos destacadas y base visual para futuras funcionalidades.",
@@ -68,25 +50,7 @@ const projects: Project[] = [
     codeUrl: "https://github.com/Julesb0/clon-inicial-MercadoLibre.git",
   },
   {
-    id: "03",
-    title: "Aid Manager Mobile",
-    description:
-      "Basada en la versión web, esta aplicación móvil extiende la experiencia de gestión al ofrecer funcionalidades centradas en directores de proyecto, permitiendo supervisar, asignar y tomar decisiones clave desde cualquier lugar.",
-    bannerBg: "linear-gradient(135deg, #166534 0%, #16a34a 60%, #4ade80 100%)",
-    bannerLabel: "Aid Manager Mobile",
-    bannerLabelColor: "#dcfce7",
-    previewBg: "#d1fae5",
-    techs: [
-      { name: "Flutter", bg: "#54c5f8", letter: "F", color: "#fff" },
-      { name: "Dart", bg: "#00b4ab", letter: "D", color: "#fff" },
-      { name: "C#", bg: "#68217a", letter: "C#", color: "#fff" },
-      { name: ".NET", bg: "#512bd4", letter: ".", color: "#fff" },
-    ],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: "04",
+    id: "02",
     title: "Mentes Creativas",
     description:
       "Plataforma educativa interactiva orientada al aprendizaje de matemáticas, ciencias naturales y tecnología mediante experiencias 3D inmersivas. Incluye módulos como sistema solar, formas 3D y simetría para aprendizaje lúdico.",
