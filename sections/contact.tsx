@@ -119,7 +119,7 @@ export function ContactSection() {
                   />
                 </div>
                 <div className="text-left">
-                  <h3 className="text-xl font-bold text-[#f1f5f9]">Julio Bolaños</h3>
+                  <h3 className="text-xl font-bold text-[#f1f5f9]">Julio B. Benavides</h3>
                   <p className="text-[#7c3aed] font-mono text-sm">Desarrollador de software</p>
                 </div>
               </div>

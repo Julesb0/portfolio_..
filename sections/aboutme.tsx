@@ -75,7 +75,7 @@ export function AboutSection() {
 
               {/* Row 1 */}
               <div className="py-3 md:py-0">
-                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Idiomas</p>
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Idiomas</p>
                 <div className="w-full h-px bg-[#1e293b] mb-4" />
                 <p className="text-[#f1f5f9] text-sm">
                   <strong>Español</strong> - Nativo &nbsp;&nbsp;
@@ -84,14 +84,14 @@ export function AboutSection() {
               </div>
 
               <div className="py-3 md:py-0">
-                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Intereses</p>
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Intereses</p>
                 <div className="w-full h-px bg-[#1e293b] mb-4" />
                 <p className="text-[#f1f5f9] text-sm">Programación - Diseño UX/UI - Música - Fútbol</p>
               </div>
 
               {/* Row 2 */}
               <div className="py-3 md:py-0 md:col-span-2">
-                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Habilidades Blandas</p>
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Habilidades Blandas</p>
                 <div className="w-full h-px bg-[#1e293b] mb-4" />
                 <p className="text-[#f1f5f9] text-sm">Creativo - Proactivo - Autodidacta</p>
               </div>
@@ -100,7 +100,7 @@ export function AboutSection() {
 
           {/* Right block: educación */}
           <div className="pl-0 md:pl-8 py-6 md:py-8">
-            <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide">Educación</p>
+            <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Educación</p>
             <div className="w-full h-px bg-[#1e293b] mb-6" />
 
             <div className="flex items-start gap-4">
