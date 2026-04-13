@@ -106,7 +106,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a1a]">
+    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
       <StarField />
 
       {/* Content */}

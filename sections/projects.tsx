@@ -176,7 +176,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function ProjectsSection() {
   return (
-    <section id="proyectos" className="relative py-24 md:py-32 bg-[#0a0a1a]">
+    <section id="proyectos" className="relative py-24 md:py-32">
       <StarField count={30} opacity={0.15} />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">

@@ -54,7 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-[#0a0a0f] text-[#f1f5f9] overflow-x-hidden">
+      <body className="font-sans antialiased bg-[#1E1E2E] text-[#f1f5f9] overflow-x-hidden">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

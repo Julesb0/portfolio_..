@@ -62,7 +62,7 @@ const skillCategories: SkillCategory[] = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-24 md:py-32 bg-[#0f172a]">
+    <section id="skills" className="relative py-24 md:py-32">
       <StarField count={40} opacity={0.2} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
