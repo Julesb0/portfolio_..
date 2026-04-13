@@ -3,8 +3,11 @@
 import Image from "next/image"
 import { User, MapPin } from "lucide-react"
 import { StarField } from "../components/star-field"
+import { useLanguage } from "@/components/language-provider"
 
 export function AboutSection() {
+  const { language } = useLanguage()
+
   return (
     <section id="sobre-mi" className="relative py-20 md:py-24">
       <StarField count={50} opacity={0.18} />
@@ -18,17 +21,17 @@ export function AboutSection() {
               <span className="absolute inset-0 rounded-xl bg-[#4ade80]/20 blur-md" />
               <User className="relative w-5 h-5 text-[#dcfce7]" />
             </div>
-            <span className="text-[#f1f5f9] text-base font-medium tracking-wide">Sobre Mí</span>
+            <span className="text-[#f1f5f9] text-base font-medium tracking-wide">{language === "es" ? "Sobre Mí" : "About Me"}</span>
           </div>
         </div>
 
         {/* Main heading */}
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-12 text-balance">
-          <span className="text-[#f1f5f9]">Soy un </span>
-          <span className="text-[#4ade80]">desarrollador de software</span>
+          <span className="text-[#f1f5f9]">{language === "es" ? "Soy un " : "I am a "}</span>
+          <span className="text-[#4ade80]">{language === "es" ? "desarrollador de software" : "software developer"}</span>
           <br />
-          <span className="text-[#f1f5f9]">especializado en </span>
-          <span className="text-[#4ade80]">Aplicaciones Web</span>
+          <span className="text-[#f1f5f9]">{language === "es" ? "especializado en " : "specialized in "}</span>
+          <span className="text-[#4ade80]">{language === "es" ? "Aplicaciones Web" : "Web Applications"}</span>
         </h2>
 
         {/* Bio row: text left, photo right */}
@@ -36,17 +39,28 @@ export function AboutSection() {
           {/* Left: name + role + bio */}
           <div className="flex-1 lg:max-w-4xl">
             <p className="text-[#f1f5f9] font-bold text-lg mb-1">Julio Esteban Bolaños Benavides</p>
-            <p className="text-[#4ade80] text-sm font-medium mb-5">Desarrollador Frontend</p>
+            <p className="text-[#4ade80] text-sm font-medium mb-5">{language === "es" ? "Desarrollador de software" : "Software Developer"}</p>
 
             <div className="space-y-4 text-[#94a3b8] text-sm leading-relaxed lg:max-w-2xl">
               <p>
-                Soy estudiante de Ingeniería de Software y actualmente me encuentro en los semestres intermedios de mi carrera. A lo largo de mi formación, he cultivado una mentalidad proactiva y autodidacta, participando en{" "}
-                <strong className="text-[#f1f5f9]">proyectos académicos</strong> y{" "}
-                <strong className="text-[#f1f5f9]">trabajos colaborativos</strong> que me han permitido desarrollar habilidades blandas y técnicas.
+                {language === "es"
+                  ? "Soy estudiante de Ingeniería de Software y actualmente me encuentro en los semestres intermedios de mi carrera. A lo largo de mi formación, he cultivado una mentalidad proactiva y autodidacta, participando en "
+                  : "I am a Software Engineering student currently in the intermediate semesters of my degree. Throughout my training, I have cultivated a proactive and self-taught mindset by participating in "}
+                <strong className="text-[#f1f5f9]">{language === "es" ? "proyectos académicos" : "academic projects"}</strong>
+                {language === "es" ? " y " : " and "}
+                <strong className="text-[#f1f5f9]">{language === "es" ? "trabajos colaborativos" : "collaborative work"}</strong>
+                {language === "es"
+                  ? " que me han permitido desarrollar habilidades blandas y técnicas."
+                  : " that have helped me develop both soft and technical skills."}
               </p>
               <p>
-                Durante mi formación, he enfocado mi aprendizaje en el diseño centrado en el usuario y el rendimiento óptimo para aplicaciones web y móviles. De manera autodidacta, he adquirido habilidades para desarrollar soluciones{" "}
-                <strong className="text-[#f1f5f9]">accesibles y escalables</strong>. También me gusta tocar el piano y he participado en el carnaval en dos ocasiones: como redoblante y en coreografía.
+                {language === "es"
+                  ? "Durante mi formación, he enfocado mi aprendizaje en el diseño centrado en el usuario y el rendimiento óptimo para aplicaciones web y móviles. De manera autodidacta, he adquirido habilidades para desarrollar soluciones "
+                  : "During my training, I have focused my learning on user-centered design and optimal performance for web and mobile applications. In a self-taught way, I have developed skills to build "}
+                <strong className="text-[#f1f5f9]">{language === "es" ? "accesibles y escalables" : "accessible and scalable solutions"}</strong>
+                {language === "es"
+                  ? ". También me gusta tocar el piano y he participado en el carnaval en dos ocasiones: como redoblante y en coreografía."
+                  : ". I also enjoy playing piano and have participated in carnival twice: as a snare drummer and in choreography."}
               </p>
             </div>
           </div>
@@ -75,32 +89,32 @@ export function AboutSection() {
 
               {/* Row 1 */}
               <div className="py-3 md:py-0">
-                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Idiomas</p>
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">{language === "es" ? "Idiomas" : "Languages"}</p>
                 <div className="w-full h-px bg-[#1e293b] mb-4" />
                 <p className="text-[#f1f5f9] text-sm">
-                  <strong>Español</strong> - Nativo &nbsp;&nbsp;
-                  <strong>Inglés</strong> - B1
+                  <strong>{language === "es" ? "Español" : "Spanish"}</strong> - {language === "es" ? "Nativo" : "Native"} &nbsp;&nbsp;
+                  <strong>{language === "es" ? "Inglés" : "English"}</strong> - B1
                 </p>
               </div>
 
               <div className="py-3 md:py-0">
-                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Intereses</p>
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">{language === "es" ? "Intereses" : "Interests"}</p>
                 <div className="w-full h-px bg-[#1e293b] mb-4" />
-                <p className="text-[#f1f5f9] text-sm">Programación - Diseño UX/UI - Piano - Fútbol</p>
+                <p className="text-[#f1f5f9] text-sm">{language === "es" ? "Programación - Diseño UX/UI - Piano - Fútbol" : "Programming - UI/UX Design - Piano - Football"}</p>
               </div>
 
               {/* Row 2 */}
               <div className="py-3 md:py-0 md:col-span-2">
-                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Habilidades Blandas</p>
+                <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">{language === "es" ? "Habilidades Blandas" : "Soft Skills"}</p>
                 <div className="w-full h-px bg-[#1e293b] mb-4" />
-                <p className="text-[#f1f5f9] text-sm">Creativo - Proactivo - Autodidacta</p>
+                <p className="text-[#f1f5f9] text-sm">{language === "es" ? "Creativo - Proactivo - Autodidacta" : "Creative - Proactive - Self-taught"}</p>
               </div>
             </div>
           </div>
 
           {/* Right block: educación */}
           <div className="pl-0 md:pl-8 py-6 md:py-8">
-            <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">Educación</p>
+            <p className="text-[#4ade80] text-sm font-semibold mb-3 tracking-wide [text-shadow:0_0_10px_rgba(74,222,128,0.45)]">{language === "es" ? "Educación" : "Education"}</p>
             <div className="w-full h-px bg-[#1e293b] mb-6" />
 
             <div className="flex items-start gap-4">
@@ -128,7 +142,7 @@ export function AboutSection() {
                 <p className="text-[#64748b] text-xs mt-1">Inglés en Cambridge</p>
                 <div className="flex items-center gap-1.5 mt-2 text-[#64748b] text-xs">
                   <MapPin className="w-3 h-3 flex-shrink-0" />
-                  <span>Pasto, Nariño - Colombia</span>
+                  <span>{language === "es" ? "Pasto, Nariño - Colombia" : "Pasto, Narino - Colombia"}</span>
                 </div>
               </div>
             </div>

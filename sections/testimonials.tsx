@@ -4,6 +4,7 @@ import { useState } from "react"
 import { MessageSquare, ChevronLeft, ChevronRight, Quote } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { StarField } from "@/sections/esferafondo"
+import { useLanguage } from "@/components/language-provider"
 
 const testimonials = [
   {
@@ -36,6 +37,7 @@ const testimonials = [
 ]
 
 export function TestimonialsSection() {
+  const { language } = useLanguage()
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextTestimonial = () => {
@@ -58,11 +60,11 @@ export function TestimonialsSection() {
               <span className="absolute inset-0 rounded-xl bg-[#7c3aed]/20 blur-md" />
               <MessageSquare className="relative w-5 h-5 text-[#ddd6fe]" />
             </div>
-            <span className="text-sm text-[#f1f5f9]">Testimonios</span>
+            <span className="text-sm text-[#f1f5f9]">{language === "es" ? "Testimonios" : "Testimonials"}</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
-            <span className="text-[#f1f5f9]">Lo que dicen sobre </span>
-            <span className="text-[#7c3aed]">mi trabajo</span>
+            <span className="text-[#f1f5f9]">{language === "es" ? "Lo que dicen sobre " : "What people say about "}</span>
+            <span className="text-[#7c3aed]">{language === "es" ? "mi trabajo" : "my work"}</span>
           </h2>
         </div>
 
@@ -160,7 +162,11 @@ export function TestimonialsSection() {
                   className={`w-2 h-2 rounded-full transition-colors cursor-pointer ${
                     index === currentIndex ? "bg-[#7c3aed]" : "bg-[#1e293b]"
                   }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-label={
+                    language === "es"
+                      ? `Ir al testimonio ${index + 1}`
+                      : `Go to testimonial ${index + 1}`
+                  }
                 />
               ))}
             </div>

@@ -2,6 +2,7 @@
 
 import { Code2, ExternalLink } from "lucide-react"
 import { StarField } from "@/sections/esferafondo"
+import { useLanguage } from "@/components/language-provider"
 
 interface Skill {
   name: string
@@ -60,6 +61,8 @@ const skillCategories: SkillCategory[] = [
 ]
 
 export function SkillsSection() {
+  const { language } = useLanguage()
+
   return (
     <section id="skills" className="relative py-20 md:py-24">
       <StarField count={65} opacity={0.2} />
@@ -72,13 +75,13 @@ export function SkillsSection() {
               <span className="absolute inset-0 rounded-xl bg-[#60a5fa]/20 blur-md" />
               <Code2 className="relative w-5 h-5 text-[#c7d2fe]" />
             </div>
-            <span className="text-sm text-[#f1f5f9]">Habilidades técnicas</span>
+            <span className="text-sm text-[#f1f5f9]">{language === "es" ? "Habilidades tecnicas" : "Technical Skills"}</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
-            <span className="text-[#93c5fd]">Desarrollador de Software</span>
-            <span className="text-[#f1f5f9]"> con experiencia en tecnologías </span>
+            <span className="text-[#93c5fd]">{language === "es" ? "Desarrollador de Software" : "Software Developer"}</span>
+            <span className="text-[#f1f5f9]">{language === "es" ? " con experiencia en tecnologias " : " with experience in "}</span>
             <span className="text-[#93c5fd]">Frontend</span>
-            <span className="text-[#f1f5f9]"> y </span>
+            <span className="text-[#f1f5f9]"> {language === "es" ? "y" : "and"} </span>
             <span className="text-[#93c5fd]">Backend</span>
           </h2>
         </div>
@@ -88,7 +91,15 @@ export function SkillsSection() {
           {skillCategories.map((category) => (
             <div key={category.title}>
               <div className="flex items-center justify-between mb-6">
-                <h3 className="font-mono text-sm text-[#64748b] uppercase tracking-wider">{category.title}</h3>
+                <h3 className="font-mono text-sm text-[#64748b] uppercase tracking-wider">
+                  {language === "es"
+                    ? category.title
+                    : category.title === "Herramientas"
+                      ? "Tools"
+                      : category.title === "Backend & Datos"
+                        ? "Backend & Data"
+                        : category.title}
+                </h3>
                 <div className="h-px flex-1 ml-4 bg-gradient-to-r from-[#1e293b] to-transparent" />
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">

@@ -3,10 +3,9 @@
 import { useEffect, useState, useCallback } from "react"
 import { Download, Github, Linkedin, MessageCircle, ChevronDown, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/components/language-provider"
 
-const titles = ["Software Developer", "Full Stack Jr", "UI/UX Designer"]
-
-function TypewriterText() {
+function TypewriterText({ titles }: { titles: string[] }) {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
   const [displayText, setDisplayText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
@@ -98,6 +97,13 @@ const socialLinks = [
 ]
 
 export function HeroSection() {
+  const { language } = useLanguage()
+
+  const titles =
+    language === "es"
+      ? ["Desarrollador de Software", "Full Stack Jr", "Diseñador UI/UX"]
+      : ["Software Developer", "Full Stack Jr", "UI/UX Designer"]
+
   const scrollToSection = useCallback((id: string) => {
     const element = document.getElementById(id)
     if (element) {
@@ -126,13 +132,13 @@ export function HeroSection() {
                 className="flex items-center gap-2 border border-[#334155] rounded-full px-3 py-1 text-sm text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#c4b5fd] transition-colors cursor-pointer"
               >
                 <span className="w-2 h-2 bg-[#7c3aed] rounded-full animate-pulse" />
-                Disponible para trabajar
+                {language === "es" ? "Disponible para trabajar" : "Available for work"}
               </a>
             </div>
 
             {/* Name */}
             <h1 className="text-3xl md:text-4xl font-light text-[#f1f5f9] mb-3 leading-tight">
-              Hola, soy{" "}
+              {language === "es" ? "Hola, soy " : "Hi, I'm "}
               <span className="font-bold bg-gradient-to-r from-[#c4b5fd] via-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">
                 Julio B. Benavides
               </span>
@@ -140,12 +146,14 @@ export function HeroSection() {
 
             {/* Typewriter */}
             <div className="mb-5">
-              <TypewriterText />
+              <TypewriterText titles={titles} />
             </div>
 
             {/* Bio */}
             <p className="text-[#94a3b8] text-sm md:text-base max-w-lg mb-8 leading-relaxed">
-              Estudiante de Ingenieria de Software en la Universidad Cooperativa de Colombia y desarrollador autodidacta con experiencia en Backend y Diseno UX/UI.
+              {language === "es"
+                ? "Estudiante de Ingenieria de Software en la Universidad Cooperativa de Colombia y desarrollador autodidacta con experiencia en Backend y Diseno UX/UI."
+                : "Software Engineering student at Universidad Cooperativa de Colombia and self-taught developer with experience in Backend and UI/UX Design."}
             </p>
 
             {/* CTA Buttons */}
@@ -155,14 +163,14 @@ export function HeroSection() {
                 className="bg-[#1e293b] hover:bg-[#334155] text-[#f1f5f9] border border-[#334155] font-medium px-5 py-4 gap-2 text-sm rounded-md cursor-pointer"
               >
                 <Mail className="w-4 h-4" />
-                Contactame
+                {language === "es" ? "Contactame" : "Contact me"}
               </Button>
               <Button
                 variant="outline"
                 className="border-[#334155] text-[#f1f5f9] hover:bg-[#1e293b] px-5 py-4 gap-2 text-sm rounded-md cursor-pointer"
               >
                 <Download className="w-4 h-4" />
-                Descargar CV
+                {language === "es" ? "Descargar CV" : "Download CV"}
               </Button>
             </div>
           </div>

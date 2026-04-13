@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Sora, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { LanguageProvider } from '@/components/language-provider'
 import './globals.css'
 
 const inter = Inter({ 
@@ -55,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased bg-[#1E1E2E] text-[#f1f5f9] overflow-x-hidden">
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

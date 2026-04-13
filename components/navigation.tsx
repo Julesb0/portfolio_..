@@ -3,14 +3,39 @@
 import { useState, useEffect, useCallback } from "react"
 import { Menu, X, Download, Home, FolderOpen, User, Code2, MessageSquare, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/components/language-provider"
 
 const navItems = [
-  { id: "inicio", label: "Inicio", icon: Home },
-  { id: "proyectos", label: "Proyectos", icon: FolderOpen },
-  { id: "sobre-mi", label: "Sobre Mí", icon: User },
-  { id: "skills", label: "Skills", icon: Code2 },
-  { id: "testimonios", label: "Testimonios", icon: MessageSquare },
-  { id: "contacto", label: "Contacto", icon: Mail },
+  {
+    id: "inicio",
+    label: { es: "Inicio", en: "Home" },
+    icon: Home,
+  },
+  {
+    id: "proyectos",
+    label: { es: "Proyectos", en: "Projects" },
+    icon: FolderOpen,
+  },
+  {
+    id: "sobre-mi",
+    label: { es: "Sobre Mí", en: "About Me" },
+    icon: User,
+  },
+  {
+    id: "skills",
+    label: { es: "Skills", en: "Skills" },
+    icon: Code2,
+  },
+  {
+    id: "testimonios",
+    label: { es: "Testimonios", en: "Testimonials" },
+    icon: MessageSquare,
+  },
+  {
+    id: "contacto",
+    label: { es: "Contacto", en: "Contact" },
+    icon: Mail,
+  },
 ]
 
 const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%"
@@ -52,6 +77,7 @@ function DecodeText({ text, isHovered }: { text: string; isHovered: boolean }) {
 }
 
 export function Navigation() {
+  const { language, toggleLanguage } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("inicio")
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
@@ -122,13 +148,21 @@ export function Navigation() {
                   }`}
                 >
                   <Icon className="w-4 h-4" />
-                  <DecodeText text={item.label} isHovered={hoveredItem === item.id} />
+                  <DecodeText text={item.label[language]} isHovered={hoveredItem === item.id} />
                   {activeSection === item.id && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-[#7c3aed] rounded-full" />
                   )}
                 </button>
               )
             })}
+
+            <button
+              onClick={toggleLanguage}
+              className="ml-2 px-3 py-2 text-xs font-mono rounded-md border border-[#334155] text-[#cbd5e1] hover:border-[#7c3aed] hover:text-[#f1f5f9] transition-colors cursor-pointer"
+              aria-label={language === "es" ? "Cambiar a inglés" : "Switch to Spanish"}
+            >
+              {language === "es" ? "EN" : "ES"}
+            </button>
           </div>
 
           {/* Desktop CTA */}
@@ -138,7 +172,7 @@ export function Navigation() {
               className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full px-4 gap-2"
             >
               <Download className="w-4 h-4" />
-              Descargar CV
+              {language === "es" ? "Descargar CV" : "Download CV"}
             </Button>
           </div>
 
@@ -146,7 +180,15 @@ export function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 text-[#f1f5f9] hover:text-[#7c3aed] transition-colors cursor-pointer"
-            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={
+              isOpen
+                ? language === "es"
+                  ? "Cerrar menú"
+                  : "Close menu"
+                : language === "es"
+                  ? "Abrir menú"
+                  : "Open menu"
+            }
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -173,15 +215,21 @@ export function Navigation() {
                 }`}
               >
                 <Icon className="w-5 h-5" />
-                <span className="font-mono">{item.label}</span>
+                <span className="font-mono">{item.label[language]}</span>
               </button>
             )
           })}
+          <button
+            onClick={toggleLanguage}
+            className="w-full mt-2 px-4 py-3 rounded-lg border border-[#334155] text-[#cbd5e1] hover:text-[#f1f5f9] hover:border-[#7c3aed] transition-colors font-mono text-sm cursor-pointer"
+          >
+            {language === "es" ? "Cambiar a EN" : "Switch to ES"}
+          </button>
           <Button
             className="w-full mt-4 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full gap-2"
           >
             <Download className="w-4 h-4" />
-            Descargar CV
+            {language === "es" ? "Descargar CV" : "Download CV"}
           </Button>
         </div>
       </div>

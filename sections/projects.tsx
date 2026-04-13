@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { FolderOpen, Search, Github } from "lucide-react"
 import { StarField } from "@/sections/esferafondo"
+import { useLanguage } from "@/components/language-provider"
 
 interface TechIcon {
   name: string
@@ -72,7 +73,7 @@ const projects: Project[] = [
   },
 ]
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, language }: { project: Project; language: "es" | "en" }) {
   return (
     <div className="flex flex-col rounded-xl overflow-hidden bg-[#0f172a] border border-[#1e293b] hover:border-[#334155] transition-all duration-300 group">
       {/* Banner / Preview Image */}
@@ -158,7 +159,7 @@ function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#334155] text-sm font-semibold text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all cursor-pointer"
             >
-              Codigo
+              {language === "es" ? "Codigo" : "Code"}
               <Github className="w-3.5 h-3.5" />
             </a>
 
@@ -169,7 +170,7 @@ function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#334155] text-sm font-semibold text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all cursor-pointer"
             >
-              Explorar
+              {language === "es" ? "Explorar" : "Explore"}
               <Search className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -180,6 +181,8 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export function ProjectsSection() {
+  const { language } = useLanguage()
+
   return (
     <section id="proyectos" className="relative py-20 md:py-24">
       <StarField count={55} opacity={0.15} />
@@ -192,19 +195,19 @@ export function ProjectsSection() {
               <span className="absolute inset-0 rounded-xl bg-[#60a5fa]/20 blur-md" />
               <FolderOpen className="relative w-5 h-5 text-[#dbeafe]" />
             </div>
-            <span className="text-sm text-[#f1f5f9]">Proyectos</span>
+            <span className="text-sm text-[#f1f5f9]">{language === "es" ? "Proyectos" : "Projects"}</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight text-[#f1f5f9] max-w-3xl">
-            Algunos de mis{" "}
-            <span className="text-[#93c5fd]">proyectos destacados</span>{" "}
-            como desarrollador full-stack 
+            {language === "es" ? "Algunos de mis " : "Some of my "}
+            <span className="text-[#93c5fd]">{language === "es" ? "proyectos destacados" : "featured projects"}</span>{" "}
+            {language === "es" ? "como desarrollador full-stack" : "as a full-stack developer"}
           </h2>
         </div>
 
         {/* 2-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} language={language} />
           ))}
         </div>
       </div>
