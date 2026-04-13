@@ -22,7 +22,7 @@ export function AboutSection() {
         </div>
 
         {/* Main heading */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-12 text-balance">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-12 text-balance">
           <span className="text-[#f1f5f9]">Soy un </span>
           <span className="text-[#4ade80]">desarrollador de software</span>
           <br />

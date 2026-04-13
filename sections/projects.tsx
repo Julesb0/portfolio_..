@@ -189,7 +189,7 @@ export function ProjectsSection() {
             <FolderOpen className="w-5 h-5 text-[#64748b]" />
             <span className="text-sm text-[#64748b]">Proyectos</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#f1f5f9] max-w-3xl">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#f1f5f9] max-w-3xl">
             Algunos de mis{" "}
             <span className="text-[#38bdf8]">proyectos destacados</span>{" "}
             como desarrollador full-stack y diseñador UI/UX

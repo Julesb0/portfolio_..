@@ -96,6 +96,7 @@
   }
   html {
     scroll-behavior: smooth;
+    font-size: 93.75%;
   }
 }
 

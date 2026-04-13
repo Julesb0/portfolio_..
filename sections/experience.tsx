@@ -56,7 +56,7 @@ export function ExperienceSection() {
             <Briefcase className="w-5 h-5 text-[#f97316]" />
             <span className="font-mono text-sm text-[#64748b]">{"// 04 · EXPERIENCIA LABORAL"}</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight" style={{ fontFamily: 'var(--font-sora)' }}>
             <span className="text-[#f97316]">Desarrollador Frontend</span>
             <span className="text-[#f1f5f9]"> dedicado a crear aplicaciones web y </span>
             <span className="text-[#f97316]">proyectos de impacto social</span>

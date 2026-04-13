@@ -47,10 +47,10 @@ function TypewriterText() {
   }, [displayText, isDeleting, isPaused, currentTitleIndex])
 
   return (
-    <div className="font-mono text-xl md:text-2xl flex items-center gap-1 text-[#f1f5f9]">
+    <div className="font-mono text-base md:text-lg flex items-center gap-1 text-[#f1f5f9]">
       <span className="text-[#64748b]">{"<"}</span>
       <span>{displayText}</span>
-      <span className="w-0.5 h-6 bg-[#f1f5f9] animate-pulse inline-block" />
+      <span className="w-0.5 h-5 bg-[#f1f5f9] animate-pulse inline-block" />
       <span className="text-[#64748b]">{" />"}</span>
     </div>
   )
@@ -110,67 +110,72 @@ export function HeroSection() {
       <StarField />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 py-32">
-        {/* Avatar row */}
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-16 h-16 rounded-full bg-[#1e293b] border-2 border-[#334155] flex items-center justify-center overflow-hidden flex-shrink-0">
-            <span className="text-xl font-bold text-[#7c3aed]">JB</span>
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-20 py-32">
+        <div className="flex justify-between items-start">
+          {/* Left Content */}
+          <div className="max-w-2xl">
+            {/* Avatar row */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-full bg-[#1e293b] border-2 border-[#334155] flex items-center justify-center overflow-hidden flex-shrink-0">
+                <span className="text-lg font-bold text-[#7c3aed]">JB</span>
+              </div>
+              <div className="flex items-center gap-2 border border-[#334155] rounded-full px-3 py-1 text-sm text-[#f1f5f9]">
+                <span className="w-2 h-2 bg-[#10b981] rounded-full animate-pulse" />
+                Disponible para trabajar
+              </div>
+            </div>
+
+            {/* Name */}
+            <h1 className="text-3xl md:text-4xl font-bold text-[#f1f5f9] mb-3 leading-tight">
+              Hola, soy{" "}
+              <span className="text-[#7c3aed]">Julio Bolaños</span>
+            </h1>
+
+            {/* Typewriter */}
+            <div className="mb-5">
+              <TypewriterText />
+            </div>
+
+            {/* Bio */}
+            <p className="text-[#94a3b8] text-sm md:text-base max-w-lg mb-8 leading-relaxed">
+              Estudiante de Ingenieria de Software en la Universidad Cooperativa de Colombia y desarrollador autodidacta con experiencia en Frontend y Diseno UX/UI.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-3">
+              <Button
+                onClick={() => scrollToSection("contacto")}
+                className="bg-[#1e293b] hover:bg-[#334155] text-[#f1f5f9] border border-[#334155] font-medium px-5 py-4 gap-2 text-sm rounded-md cursor-pointer"
+              >
+                <Mail className="w-4 h-4" />
+                Contactame
+              </Button>
+              <Button
+                variant="outline"
+                className="border-[#334155] text-[#f1f5f9] hover:bg-[#1e293b] px-5 py-4 gap-2 text-sm rounded-md cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                Descargar CV
+              </Button>
+            </div>
           </div>
-          <div className="flex items-center gap-2 border border-[#334155] rounded-full px-4 py-1.5 text-sm text-[#f1f5f9]">
-            <span className="w-2 h-2 bg-[#10b981] rounded-full animate-pulse" />
-            Disponible para trabajar
+
+          {/* Social Icons - Right side (NOT fixed) */}
+          <div className="hidden lg:flex flex-col gap-3">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="w-11 h-11 flex items-center justify-center rounded-full bg-[#1e293b] border border-[#334155] text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all cursor-pointer"
+              >
+                <Icon className="w-4 h-4" />
+              </a>
+            ))}
           </div>
         </div>
-
-        {/* Name */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#f1f5f9] mb-4 leading-tight">
-          Hola, soy{" "}
-          <span className="text-[#7c3aed]">Julio Bolaños</span>
-        </h1>
-
-        {/* Typewriter */}
-        <div className="mb-6">
-          <TypewriterText />
-        </div>
-
-        {/* Bio */}
-        <p className="text-[#94a3b8] text-base md:text-lg max-w-xl mb-10 leading-relaxed">
-          Estudiante de Ingeniería de Software en la Universidad Cooperativa de Colombia y desarrollador autodidacta con experiencia en Frontend y Diseño UX/UI.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4">
-          <Button
-            onClick={() => scrollToSection("contacto")}
-            className="bg-[#f1f5f9] hover:bg-white text-[#0a0a1a] font-semibold px-6 py-5 gap-2 text-sm rounded-md cursor-pointer"
-          >
-            <Mail className="w-4 h-4" />
-            Contáctame
-          </Button>
-          <Button
-            variant="outline"
-            className="border-[#334155] text-[#f1f5f9] hover:bg-[#1e293b] px-6 py-5 gap-2 text-sm rounded-md cursor-pointer"
-          >
-            <Download className="w-4 h-4" />
-            Descargar CV
-          </Button>
-        </div>
-      </div>
-
-      {/* Fixed Social Icons - Right side */}
-      <div className="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-3 z-40">
-        {socialLinks.map(({ href, label, icon: Icon }) => (
-          <a
-            key={label}
-            href={href}
-            target={href.startsWith("http") ? "_blank" : undefined}
-            rel="noopener noreferrer"
-            aria-label={label}
-            className="w-11 h-11 flex items-center justify-center rounded-full bg-[#111827] border border-[#1e293b] text-[#f1f5f9] hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all cursor-pointer"
-          >
-            <Icon className="w-4 h-4" />
-          </a>
-        ))}
       </div>
 
       {/* Scroll Indicator */}
