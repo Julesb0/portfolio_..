@@ -10,28 +10,28 @@ const testimonials = [
   {
     id: 1,
     content:
-      "Julio demostró ser un desarrollador excepcional durante nuestro proyecto conjunto. Su capacidad para resolver problemas complejos y su atención al detalle son impresionantes. Siempre dispuesto a ayudar y compartir conocimientos.",
-    author: "Compañero de clase",
-    role: "Estudiante de Ingeniería de Software",
-    initials: "CC",
+      "Trabajar con Julio no es solo \"hacer código y ya\". El man siempre está pensando en cómo mejorar lo que ya funciona. A veces puede ser intenso con los detalles, pero al final uno entiende por qué: le gusta que las cosas queden bien hechas de verdad. Además, no es de esos que se guardan el conocimiento, siempre explica sin hacerte sentir bruto.",
+    author: "Nicolás Bastidas",
+    role: "",
+    initials: "NB",
     color: "#7c3aed",
   },
   {
     id: 2,
     content:
-      "Como profesor, he visto a muchos estudiantes, pero Julio destaca por su compromiso con el aprendizaje continuo y su capacidad para aplicar conceptos teóricos en proyectos prácticos. Un futuro prometedor en la industria del software.",
-    author: "Profesor Universidad",
-    role: "Docente de Programación",
-    initials: "PU",
+      "Lo que más destaco de trabajar con Julio es que no se queda quieto. Si algo no le sale, insiste hasta que lo entiende o lo hace funcionar. Puedes llegar con una propuesta y la analiza de verdad, no te la descarta por ego.",
+    author: "William Inzandara",
+    role: "",
+    initials: "WI",
     color: "#38bdf8",
   },
   {
     id: 3,
     content:
-      "Trabajar con Julio en el proyecto de Aneimera fue una experiencia enriquecedora. Su liderazgo técnico y habilidades de comunicación facilitaron el trabajo en equipo. Entrega resultados de alta calidad en tiempo récord.",
-    author: "Colaborador de proyecto",
-    role: "Desarrollador Backend",
-    initials: "CP",
+      "Con Julio programar se siente más como construir algo en serio que como cumplir una tarea. El tipo se mete en el proyecto, le importa cómo se ve, cómo se usa y hasta cómo lo va a entender otra persona después. Algo que me marcó fue que siempre piensa en el usuario final, no solo en que el código funcione. Y en equipo es firme, si ve algo mal lo dice, pero con la intención de mejorar, no de criticar por criticar. Eso hace que uno también suba el nivel.",
+    author: "Khaled Benavides",
+    role: "",
+    initials: "KB",
     color: "#10b981",
   },
 ]
@@ -102,7 +102,7 @@ export function TestimonialsSection() {
                 </div>
                 <div>
                   <p className="text-[#f1f5f9] font-medium">{testimonial.author}</p>
-                  <p className="text-[#64748b] text-sm">{testimonial.role}</p>
+                  {testimonial.role ? <p className="text-[#64748b] text-sm">{testimonial.role}</p> : null}
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export function TestimonialsSection() {
               </div>
               <div>
                 <p className="text-[#f1f5f9] font-medium">{testimonials[currentIndex].author}</p>
-                <p className="text-[#64748b] text-sm">{testimonials[currentIndex].role}</p>
+                {testimonials[currentIndex].role ? <p className="text-[#64748b] text-sm">{testimonials[currentIndex].role}</p> : null}
               </div>
             </div>
           </div>

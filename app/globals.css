@@ -224,3 +224,61 @@
   box-shadow: 0 10px 40px rgba(124, 58, 237, 0.2);
   border-color: var(--primary);
 }
+
+/* Warm light mode: soft daylight tone without harsh white */
+html[data-theme='warm-light'] {
+  --background: #fcebcf;
+  --background-surface: #b1aa9e;
+  --background-card: #f8f3e9;
+  --foreground: #273242;
+  --card: #f8f3e9;
+  --card-foreground: #273242;
+  --popover: #f8f3e9;
+  --popover-foreground: #273242;
+  --muted: #e3d7c5;
+  --muted-foreground: #5f6f84;
+  --border: #d8ccb9;
+  --input: #d8ccb9;
+}
+
+html[data-theme='warm-light'] body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html[data-theme='warm-light'] .glass {
+  background: rgba(245, 239, 227, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Override frequently used dark arbitrary classes to warm-light equivalents */
+html[data-theme='warm-light'] [class*='bg-[#1E1E2E]'],
+html[data-theme='warm-light'] [class*='bg-[#111827]'],
+html[data-theme='warm-light'] [class*='bg-[#0f172a]'],
+html[data-theme='warm-light'] [class*='bg-[#1e293b]'] {
+  background-color: #f8f3e9 !important;
+}
+
+html[data-theme='warm-light'] [class*='text-[#f1f5f9]'] {
+  color: #273242 !important;
+}
+
+html[data-theme='warm-light'] [class*='text-[#94a3b8]'],
+html[data-theme='warm-light'] [class*='text-[#64748b]'] {
+  color: #5f6f84 !important;
+}
+
+html[data-theme='warm-light'] [class*='border-[#1e293b]'],
+html[data-theme='warm-light'] [class*='border-[#334155]'] {
+  border-color: #d8ccb9 !important;
+}
+
+/* Keep media and logos with original colors */
+html[data-theme='warm-light'] img,
+html[data-theme='warm-light'] svg,
+html[data-theme='warm-light'] video,
+html[data-theme='warm-light'] canvas,
+html[data-theme='warm-light'] iframe {
+  filter: none !important;
+}

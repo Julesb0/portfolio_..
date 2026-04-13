@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Sora, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/components/language-provider'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const inter = Inter({ 
@@ -54,9 +55,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-[#1E1E2E] text-[#f1f5f9] overflow-x-hidden">
-        <LanguageProvider>{children}</LanguageProvider>
+    <html lang="es" className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-background text-foreground overflow-x-hidden">
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
+          <LanguageProvider>{children}</LanguageProvider>
+        </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

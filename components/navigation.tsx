@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { Menu, X, Download, Home, FolderOpen, User, Code2, MessageSquare, Mail } from "lucide-react"
+import { Menu, X, Download, Home, FolderOpen, User, Code2, MessageSquare, Mail, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
+import { useTheme } from "next-themes"
 
 const navItems = [
   {
@@ -78,10 +79,22 @@ function DecodeText({ text, isHovered }: { text: string; isHovered: boolean }) {
 
 export function Navigation() {
   const { language, toggleLanguage } = useLanguage()
+  const { theme, setTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("inicio")
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const isWarmLight = mounted && theme === "warm-light"
+
+  const toggleTheme = () => {
+    setTheme(isWarmLight ? "dark" : "warm-light")
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -163,6 +176,25 @@ export function Navigation() {
             >
               {language === "es" ? "EN" : "ES"}
             </button>
+
+            <button
+              onClick={toggleTheme}
+              className="px-3 py-2 text-xs font-mono rounded-md border border-[#334155] text-[#cbd5e1] hover:border-[#7c3aed] hover:text-[#f1f5f9] transition-colors cursor-pointer"
+              aria-label={
+                isWarmLight
+                  ? language === "es"
+                    ? "Activar modo oscuro"
+                    : "Enable dark mode"
+                  : language === "es"
+                    ? "Activar modo claro calido"
+                    : "Enable warm light mode"
+              }
+            >
+              <span className="inline-flex items-center gap-1.5">
+                {isWarmLight ? <Moon className="w-3.5 h-3.5" /> : <Sun className="w-3.5 h-3.5" />}
+                {isWarmLight ? (language === "es" ? "Oscuro" : "Dark") : (language === "es" ? "Calido" : "Warm")}
+              </span>
+            </button>
           </div>
 
           {/* Desktop CTA */}
@@ -224,6 +256,21 @@ export function Navigation() {
             className="w-full mt-2 px-4 py-3 rounded-lg border border-[#334155] text-[#cbd5e1] hover:text-[#f1f5f9] hover:border-[#7c3aed] transition-colors font-mono text-sm cursor-pointer"
           >
             {language === "es" ? "Cambiar a EN" : "Switch to ES"}
+          </button>
+          <button
+            onClick={toggleTheme}
+            className="w-full mt-2 px-4 py-3 rounded-lg border border-[#334155] text-[#cbd5e1] hover:text-[#f1f5f9] hover:border-[#7c3aed] transition-colors font-mono text-sm cursor-pointer"
+          >
+            <span className="inline-flex items-center gap-2">
+              {isWarmLight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+              {isWarmLight
+                ? language === "es"
+                  ? "Modo oscuro"
+                  : "Dark mode"
+                : language === "es"
+                  ? "Modo claro calido"
+                  : "Warm light mode"}
+            </span>
           </button>
           <Button
             className="w-full mt-4 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full gap-2"
